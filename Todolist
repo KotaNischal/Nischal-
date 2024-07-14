@@ -22,5 +22,5 @@ class TodoList:
 
     def load_tasks(self, filename):
         with open(filename, 'r') as f:
-            self.tasks = json.load(f
+            self.tasks = json.load(f)
 
