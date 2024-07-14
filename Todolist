@@ -1,0 +1,26 @@
+import json
+
+class TodoList:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, title, description, due_date):
+        self.tasks.append({
+            'title': title,
+            'description': description,
+            'due_date': due_date,
+            'status': 'Pending'
+        })
+
+    def list_tasks(self):
+        for i, task in enumerate(self.tasks, start=1):
+            print(f"Task {i}: {task['title']} - Due Date: {task['due_date']} - Status: {task['status']}")
+
+    def save_tasks(self, filename):
+        with open(filename, 'w') as f:
+            json.dump(self.tasks, f)
+
+    def load_tasks(self, filename):
+        with open(filename, 'r') as f:
+            self.tasks = json.load(f
+
